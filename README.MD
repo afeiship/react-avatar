@@ -19,6 +19,16 @@
 
 
 ## usage:
++ install:
+```bash
+npm install --save afeiship/react-avatar
+
+#OR
+
+yarn install afeiship/react-avatar
+```
+
++ code:
 ```html
 <ReactAvatar url="http://www.baidu.com/img/bd_logo1.png" title="baidu's logo" size="36px" />
 <ReactAvatar url="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" title="Fei's logo" size="30px" />
