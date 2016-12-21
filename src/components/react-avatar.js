@@ -6,7 +6,10 @@ export default class extends React.Component{
     cssClass:React.PropTypes.string,
     url:React.PropTypes.string,
     title:React.PropTypes.string,
-    size:React.PropTypes.string,
+    size:React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.object,
+    ]),
     radius:React.PropTypes.string,
   };
 
@@ -16,19 +19,31 @@ export default class extends React.Component{
 
   constructor(props) {
     super(props);
+
     this.state = {
       url:props.url,
       title:props.title,
-      size:props.size,
+      size:this.processSize(),
       radius:props.radius
     };
+  }
+
+  processSize(){
+    let size = this.props.size;
+    if(typeof size ==='string'){
+      return {
+        width:size,
+        height:size
+      };
+    }
+    return size;
   }
 
   render(){
     return (
       <div style={{
-          width:this.state.size,
-          height:this.state.size,
+          width:this.state.size.width,
+          height:this.state.size.height,
           borderRadius:this.state.radius
         }} className={classNames('react-avatar',this.props.cssClass)}>
         <img src={this.state.url} title={this.state.title} />
