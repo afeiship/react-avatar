@@ -22,7 +22,9 @@ yarn install afeiship/react-avatar
 ```
 
 + code:
-```html
+```javascript
+import ReactAvatar from 'react-avatar';
+
 <ReactAvatar url="http://www.baidu.com/img/bd_logo1.png" title="baidu's logo" size="36px" />
 <ReactAvatar url="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" title="Fei's logo" size="30px" />
 <ReactAvatar url="https://img6.bdstatic.com/img/image/smallpic/xiaoqingxin1220.jpg" title="Fei's logo" size="30px" />
