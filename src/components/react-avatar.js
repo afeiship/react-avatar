@@ -14,7 +14,9 @@ export default class extends React.Component{
   };
 
   static defaultProps = {
-    radius:'100px'
+    radius:'100px',
+    size:'32px',
+    title:''
   };
 
   constructor(props) {
