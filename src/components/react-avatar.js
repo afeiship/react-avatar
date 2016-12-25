@@ -4,6 +4,7 @@ import classNames from 'classnames';
 export default class extends React.Component{
   static propTypes = {
     cssClass:React.PropTypes.string,
+    onClick:React.PropTypes.func,
     url:React.PropTypes.string,
     title:React.PropTypes.string,
     size:React.PropTypes.oneOfType([
@@ -43,7 +44,9 @@ export default class extends React.Component{
 
   render(){
     return (
-      <div style={{
+      <div
+        onClick={this.props.onClick}
+         style={{
           width:this.state.size.width,
           height:this.state.size.height,
           borderRadius:this.state.radius
