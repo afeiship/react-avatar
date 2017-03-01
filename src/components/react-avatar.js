@@ -20,17 +20,6 @@ export default class extends React.Component{
     title:''
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      url:props.url,
-      title:props.title,
-      size:this.processSize(),
-      radius:props.radius
-    };
-  }
-
   processSize(){
     let size = this.props.size;
     if(typeof size ==='string'){
@@ -43,15 +32,17 @@ export default class extends React.Component{
   }
 
   render(){
+    const size = this.processSize(this.props.size);
+    const {cssClass,radius,title,url} = this.props;
     return (
       <div
         onClick={this.props.onClick}
          style={{
-          width:this.state.size.width,
-          height:this.state.size.height,
-          borderRadius:this.state.radius
-        }} className={classNames('react-avatar',this.props.cssClass)}>
-        <img src={this.state.url} title={this.state.title} />
+          width:size.width,
+          height:size.height,
+          borderRadius:radius
+        }} className={classNames('react-avatar',cssClass)}>
+        <img src={url} title={title} />
       </div>
     );
   }
