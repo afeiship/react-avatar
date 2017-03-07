@@ -37,10 +37,10 @@ export default class extends React.Component{
 
   render(){
     const size = this.processSize(this.props.size);
-    const {cssClass,radius,title,placeholder,url,onLoad} = this.props;
+    const {cssClass,radius,title,placeholder,url,onLoad,onClick} = this.props;
     return (
       <div
-        onClick={this.props.onClick}
+        onClick={onClick}
          style={{
           width:size.width,
           height:size.height,
