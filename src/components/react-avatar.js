@@ -1,6 +1,7 @@
 import './style.scss';
 import classNames from 'classnames';
 import ReactLazyimg from 'react-lazyimg';
+import noop from 'noop';
 
 export default class extends React.Component{
   static propTypes = {
@@ -12,13 +13,15 @@ export default class extends React.Component{
       React.PropTypes.string,
       React.PropTypes.object,
     ]),
+    onLoad:React.PropTypes.func,
     radius:React.PropTypes.string,
   };
 
   static defaultProps = {
     radius:'100px',
     size:'32px',
-    title:''
+    title:'',
+    onLoad:noop
   };
 
   processSize(){
@@ -34,7 +37,7 @@ export default class extends React.Component{
 
   render(){
     const size = this.processSize(this.props.size);
-    const {cssClass,radius,title,placeholder,url} = this.props;
+    const {cssClass,radius,title,placeholder,url,onLoad} = this.props;
     return (
       <div
         onClick={this.props.onClick}
@@ -43,7 +46,7 @@ export default class extends React.Component{
           height:size.height,
           borderRadius:radius
         }} className={classNames('react-avatar',cssClass)}>
-        <ReactLazyimg style={{borderRadius:radius}} className="avatar-img" effect="fade" url={url} title={title} />
+        <ReactLazyimg onLoad={onLoad} style={{borderRadius:radius}} className="avatar-img" effect="fade" url={url} title={title} />
       </div>
     );
   }
