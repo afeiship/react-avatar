@@ -1,20 +1,21 @@
 import './style.scss';
+import React,{PropTypes} from 'react';
 import classNames from 'classnames';
 import ReactLazyimg from 'react-lazyimg';
 import noop from 'noop';
 
 export default class extends React.Component{
   static propTypes = {
-    cssClass:React.PropTypes.string,
-    onClick:React.PropTypes.func,
-    url:React.PropTypes.string,
-    title:React.PropTypes.string,
-    size:React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.object,
+    cssClass:PropTypes.string,
+    onClick:PropTypes.func,
+    url:PropTypes.string,
+    title:PropTypes.string,
+    size:PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
     ]),
-    onLoad:React.PropTypes.func,
-    radius:React.PropTypes.string,
+    onLoad:PropTypes.func,
+    radius:PropTypes.string,
   };
 
   static defaultProps = {
