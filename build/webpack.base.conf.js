@@ -10,11 +10,11 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
 var externals = process.env.NODE_ENV === 'production' ? {
-  react: 'React',
+  react: 'react',
   classnames: 'classnames',
-  'react-dom': 'ReactDOM',
+  'react-dom': 'react-dom',
   'noop': 'noop',
-  'react-lazyimg': 'ReactLazyimg',
+  'react-lazyimg': 'react-lazyimg',
 } : {};
 
 module.exports = {
