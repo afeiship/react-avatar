@@ -6,8 +6,7 @@ import noop from 'noop';
 
 export default class extends React.Component{
   static propTypes = {
-    cssClass:PropTypes.string,
-    onClick:PropTypes.func,
+    className:PropTypes.string,
     url:PropTypes.string,
     title:PropTypes.string,
     size:PropTypes.oneOfType([
@@ -38,15 +37,15 @@ export default class extends React.Component{
 
   render(){
     const size = this.processSize(this.props.size);
-    const {cssClass,radius,title,placeholder,url,onLoad,onClick} = this.props;
+    const {className,radius,title,placeholder,url,onLoad,...props} = this.props;
     return (
       <div
-        onClick={onClick}
+        {...props}
          style={{
           width:size.width,
           height:size.height,
           borderRadius:radius
-        }} className={classNames('react-avatar',cssClass)}>
+        }} className={classNames('react-avatar',className)}>
         <ReactLazyimg onLoad={onLoad} style={{borderRadius:radius}} className="avatar-img" effect="fade" url={url} title={title} />
       </div>
     );
