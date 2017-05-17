@@ -53,7 +53,7 @@ export default class extends React.Component{
     const size = this.processSize(this.props.size);
     const {className,radius,title,placeholder,url,onLoad,...props} = this.props;
     return (
-      <div
+      <figure
         {...props}
          style={{
           width:size.width,
@@ -61,7 +61,7 @@ export default class extends React.Component{
           borderRadius:radius
         }} className={classNames('react-avatar',className)}>
         <ReactLazyimg onLoad={onLoad} style={{borderRadius:radius}} className="avatar-img" effect="fade" url={url} title={title} />
-      </div>
+      </figure>
     );
   }
 }
