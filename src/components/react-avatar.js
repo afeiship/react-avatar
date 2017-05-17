@@ -1,8 +1,11 @@
 import './style.scss';
+
 import React,{PropTypes} from 'react';
-import classNames from 'classnames';
+
 import ReactLazyimg from 'react-lazyimg';
+import classNames from 'classnames';
 import noop from 'noop';
+import objectFitImages from 'object-fit-images';
 
 export default class extends React.Component{
   static propTypes = {
@@ -33,6 +36,17 @@ export default class extends React.Component{
       };
     }
     return size;
+  }
+
+  componentDidMount(){
+    if(!objectFitImages.supportsObjectFit){
+      this.doObjectFitFix();
+    }
+  }
+
+  doObjectFitFix(){
+    const images = document.querySelectorAll('.react-avatar img');
+    objectFitImages(images, {watchMQ:true});
   }
 
   render(){
