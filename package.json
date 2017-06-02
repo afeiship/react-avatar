@@ -82,6 +82,7 @@
     "classnames": "^2.2.5",
     "noop": "github:afeiship/noop",
     "object-fit-images": "^3.2.3",
+    "prop-types": "^15.5.10",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-lazyimg": "github:afeiship/react-lazyimg"

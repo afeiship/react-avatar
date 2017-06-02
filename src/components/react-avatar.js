@@ -1,13 +1,13 @@
 import './style.scss';
 
-import React,{PropTypes} from 'react';
-
+import PropTypes from 'prop-types';
+import React from 'react';
 import ReactLazyimg from 'react-lazyimg';
 import classNames from 'classnames';
 import noop from 'noop';
 import objectFitImages from 'object-fit-images';
 
-export default class extends React.Component{
+export default class extends React.PureComponent{
   static propTypes = {
     className:PropTypes.string,
     url:PropTypes.string,

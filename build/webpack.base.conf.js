@@ -15,6 +15,7 @@ var externals = process.env.NODE_ENV === 'production' ? {
   'react-dom': 'react-dom',
   'noop': 'noop',
   'object-fit-images': 'object-fit-images',
+  'prop-types': 'prop-types',
   'react-lazyimg': 'react-lazyimg',
 } : {};
 
