@@ -11,7 +11,11 @@ export default class extends React.PureComponent{
   static propTypes = {
     className:PropTypes.string,
     url:PropTypes.string,
-    title:PropTypes.string,
+    effect:PropTypes.oneOf([
+      'fade',
+      'replace'
+    ]),
+    lazy:PropTypes.bool,
     size:PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
@@ -21,7 +25,9 @@ export default class extends React.PureComponent{
   };
 
   static defaultProps = {
+    lazy:false,
     radius:'100px',
+    effect:'fade',
     size:'32px',
     title:'',
     onLoad:noop
@@ -51,7 +57,7 @@ export default class extends React.PureComponent{
 
   render(){
     const size = this.processSize(this.props.size);
-    const {className,radius,title,placeholder,url,onLoad,...props} = this.props;
+    const {className,radius,placeholder,url,effect,onLoad,lazy,...props} = this.props;
     return (
       <figure
         {...props}
@@ -60,7 +66,13 @@ export default class extends React.PureComponent{
           height:size.height,
           borderRadius:radius
         }} className={classNames('react-avatar',className)}>
-        <ReactLazyimg onLoad={onLoad} style={{borderRadius:radius}} className="avatar-img" effect="fade" url={url} title={title} />
+        <ReactLazyimg
+          onLoad={onLoad}
+          style={{borderRadius:radius}}
+          lazy={lazy}
+          className="avatar-img"
+          effect={effect}
+          url={url} />
       </figure>
     );
   }
