@@ -29,7 +29,6 @@ export default class extends React.PureComponent{
     radius:'100px',
     effect:'fade',
     size:'32px',
-    title:'',
     onLoad:noop
   };
 
