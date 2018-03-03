@@ -1,6 +1,8 @@
 *{margin: 0;padding:0;}
 ul,li{list-style: none;}
 
+@import './components/style.scss';
+
 .hello-react-avatar{
   color:#F00;
   padding:100px 20px;

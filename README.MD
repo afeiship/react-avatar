@@ -1,4 +1,4 @@
-#react-avatar
+# react-avatar
 > Avatar for react.
 
 ## props:
