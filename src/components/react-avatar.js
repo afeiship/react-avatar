@@ -17,6 +17,7 @@ export default class extends Component{
     size:PropTypes.array,
     onLoad:PropTypes.func,
     radius:PropTypes.string,
+    extra:PropTypes.element,
   };
 
   static defaultProps = {
@@ -44,6 +45,7 @@ export default class extends Component{
       onLoad,
       lazy,
       size,
+      extra,
       ...props
     } = this.props;
 
@@ -62,6 +64,7 @@ export default class extends Component{
           className="react-avatar-img"
           effect={effect}
           url={url} />
+        { extra }
       </figure>
     );
   }
